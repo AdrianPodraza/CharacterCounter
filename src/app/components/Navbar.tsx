@@ -7,14 +7,14 @@ import { Button } from '@/components/ui/button'
 import { Moon, Sun } from 'lucide-react'
 
 function Navbar() {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  if (!mounted) return null // unikamy błędu SSR/CSR z ikonami
+  if (!mounted) return null
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
